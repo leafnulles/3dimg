@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8">
+	<title>小叶-3D旋转相册</title>
+ <style>
+ 
+ 
+ body{
+   height:100vh;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   background-color:#000;
+   
+  
+}
+ 
+ .main{
+   width:300px;
+   height:300px;
+   position:relative;
+   transform-style:preserve-3d;
+//   transform:rotateX(0deg) rotateY(270deg);
+  animation:rotate 3s infinite alternate linear;
+}
+
+.main .item{
+  position:absolute;
+  width:100%;
+  height:100%;
+  opacity:0.7;
+}
+
+.main .front{
+  transform:translateZ(150px);
+  background: url("src/nxd1.jpg") no-repeat center center;
+}
+
+.main .back{
+  transform:rotateY(180deg) translateZ(150px);
+  background: url("src/nxd2.jpg") no-repeat center center;
+}
+
+.main .left{
+  transform:rotateY(-90deg) translateZ(150px);
+  background: url("src/nxd3.jpg") no-repeat center center;
+}
+
+
+.main .right{
+  transform:rotateY(90deg) translateZ(150px);
+  background: url("src/nxd4.jpg") no-repeat center center;
+}
+
+.main .top{
+  transform:rotateX(90deg) translateZ(150px);
+  background: url("src/nxd5.jpg") no-repeat center center;
+}
+
+.main .bottom{
+  transform:rotateX(-90deg) translateZ(150px);
+  background: url("src/nxd6.jpg") no-repeat center center;
+}
+
+h1{
+  color:white;
+  
+  
+  }
+
+
+.leaf{
+  
+
+  margin-top:500px;
+  text-shadow:2px 2px 20px rgba(0,255,255);
+  
+}
+
+
+@keyframes rotate{
+  0%{transform:rotateY(90deg)}
+  20%{transform:rotateY(180deg)}
+  40%{transform:rotateY(270deg)}
+  60%{transform:rotateX(-90deg)}
+  80%{transform:rotateX(0)}
+  100%{transform:rotateY(90deg)}
+  
+}
+ 
+ </style>
+  </head>
+  <body>	
+	<div class="main">
+  <div class="item front"><h1>前</h1></div>
+  <div class="item back"><h1>后</h1></div>
+  <div class="item left"><h1>左</h1></div>
+  <div class="item right"><h1>右</h1></div>
+  <div class="item top"><h1>上</h1></div>
+  <div class="item bottom"><h1>下</h1></div>
+
+ </div>
+ 
+   <h1 class="leaf">小叶制作</h1>
+  </body>
+</html>
